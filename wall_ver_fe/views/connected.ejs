@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Get URL Parameter Example</title>
+    <style>
+        * { 
+        box-sizing: inherit;
+    } 
+    
+    .VerificationForm_verificationFormStyles__P8xjQ .verification-form-wrapper { 
+        width: 100vw; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        min-height: 100vh; 
+        padding-top: 80px;
+    } 
+    
+    .__className_0ec1f4 { 
+        font-family: __Inter_0ec1f4,__Inter_Fallback_0ec1f4; 
+        font-style: normal;
+    } 
+    
+    body { 
+        margin:    0;
+        --primary:   #f68f08; 
+        --background-body:   #121212; 
+        --red:   #ed495d; 
+        --white:   #fff; 
+        --black:   #000; 
+        --border-radius-s:   8px; 
+        --base-font-color:   #fff; 
+        --base-font-receding-color:   #a2a2a2; 
+        font-size:  15px; 
+        font-weight:  400; 
+        line-height:  1.5; 
+        color:  var(--base-font-color);
+        background: var(--background-body);
+    } 
+    
+    html { 
+        line-height:  1.15; 
+        -webkit-text-size-adjust:  100%;
+        box-sizing: border-box;
+    } 
+    
+    .box { 
+        border-radius: 10px; 
+        box-shadow: inset 0 0 4px hsla(0,0%,74%,.302); 
+        -webkit-box-shadow: inset 0 0 4px hsla(0,0%,74%,.302);
+    } 
+    
+    .verification-form  { 
+        min-height: 400px; 
+        min-width: 640px; 
+        border-radius: 16px; 
+        position: relative; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        padding: 32px; 
+        margin-bottom: 150px;
+    } 
+    
+    *,:after,:before { 
+        box-sizing: inherit;
+    } 
+    
+    img { 
+        border-style:  none;
+        -webkit-user-select: none; 
+        -moz-user-select: none; 
+        user-select: none;
+    } 
+    
+    .app-image  { 
+        height: 100px; 
+        width: 100px; 
+        border-radius: 8px;
+    } 
+    
+    h2 { 
+        clear:  both; 
+        margin:  0; 
+        font-weight:  600; 
+        color:  var(--base-font-color);
+        font-size: 34px;
+    } 
+    
+    h2  { 
+        margin-bottom: 0;
+    } 
+    
+    p { 
+        font-size: 15px; 
+        font-weight: 400; 
+        line-height: 1.5; 
+        color: var(--base-font-color);
+    } 
+    
+    .body  { 
+        margin-bottom: 10px; 
+        margin-top: 0;
+    } 
+    
+    .connect-links  { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center;
+    } 
+    
+    .roles-list  { 
+        width: 520px; 
+        padding-bottom: 10px;
+    } 
+    
+    span { 
+        font-size: 15px; 
+        font-weight: 400; 
+        line-height: 1.5; 
+        color: var(--base-font-color);
+    } 
+    
+    .error  { 
+        color: var(--red);
+    } 
+    
+    .buttons  { 
+        margin-top: 10px; 
+        width: 100%; 
+        display: flex; 
+        justify-content: center;
+    } 
+    
+    .discord-user-name  { 
+        background: #d8dbdf; 
+        border-radius: 3px; 
+        padding: 2px 8px; 
+        margin: 6px; 
+        color: #000;
+    } 
+    
+    .connect-links .connect-wallet-button  { 
+        border: 1px solid var(--primary); 
+        background: #432a11; 
+        border-radius: 25px; 
+        padding: 6px 13px; 
+        margin: 6px; 
+        cursor: pointer; 
+        display: flex; 
+        align-items: center; 
+        transition: all .3s ease 0s;
+    } 
+    
+    .connect-links .connect-wallet-button:hover  { 
+        background: #2a1b0b;
+    } 
+    
+    h5 { 
+        clear:  both; 
+        margin:  0; 
+        font-weight:  600; 
+        color:  var(--base-font-color);
+        font-size: 18px;
+    } 
+    
+    .roles-list h5  { 
+        margin-bottom: 6px;
+    } 
+    
+    .roles-list .role-item  { 
+        background: #2e2e2e; 
+        border-radius: 7px; 
+        min-height: 50px; 
+        margin-bottom: 10px; 
+        padding: 6px 12px; 
+        display: flex;
+    } 
+    
+    .roles-list .role-item.invalid  { 
+        opacity: .3;
+    } 
+    
+    .connect-links .connect-wallet-button span  { 
+        color: var(--base-font-color);
+    } 
+    
+    .roles-list .role-item--status  { 
+        width: 36px; 
+        padding-right: 8px; 
+        justify-content: center; 
+        align-items: center; 
+        display: flex;
+    } 
+    
+    button { 
+        font-family:    inherit; 
+        font-size:    100%; 
+        line-height:    1.15; 
+        margin:    0;
+        overflow:   visible;
+        text-transform:  none;
+        -webkit-appearance: button;
+    } 
+    
+    .Button_buttonStyles__axfH_ .button:not([aria-controls="ReactQueryDevtoolsPanel"])  { 
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+        appearance: none; 
+        background: var(--white); 
+        background-size: 300% 100%; 
+        border: none; 
+        border-radius: var(--border-radius-s); 
+        position: relative; 
+        transition: all .3s ease 0s; 
+        top: 0; 
+        display: flex; 
+        align-items: center;
+    } 
+    
+    .Button_buttonStyles__axfH_ .button:not([aria-controls="ReactQueryDevtoolsPanel"]).primary-action  { 
+        background: #36220e; 
+        border: 1px solid #c77100;
+    } 
+    
+    .Button_buttonStyles__axfH_ .button:not([aria-controls="ReactQueryDevtoolsPanel"]).primary-action.is-disabled  { 
+        opacity: .5;
+    } 
+    
+    .Button_buttonStyles__axfH_ .button:not([aria-controls="ReactQueryDevtoolsPanel"]):hover  { 
+        cursor: pointer; 
+        background-color: var(--base-font-receding-color);
+    } 
+    
+    .Button_buttonStyles__axfH_ .button:not([aria-controls="ReactQueryDevtoolsPanel"]).primary-action:hover  { 
+        background: #2a1b0b;
+    } 
+    
+    .Button_buttonStyles__axfH_ .button:not([aria-controls="ReactQueryDevtoolsPanel"]).primary-action.is-disabled:hover  { 
+        cursor: default; 
+        background: #36220e;
+    } 
+    
+    .roles-list .role-item--status .indicator  { 
+        background: #d44; 
+        height: 16px; 
+        width: 16px; 
+        border-radius: 10px;
+    } 
+    
+    .roles-list .role-item--text h5  { 
+        margin: 0;
+    } 
+    
+    .roles-list .role-item--text p  { 
+        margin: 0;
+    } 
+    
+    .Button_buttonStyles__axfH_ .button:not([aria-controls="ReactQueryDevtoolsPanel"]) span  { 
+        color: var(--black); 
+        text-align: center; 
+        text-transform: capitalize; 
+        line-height: 1.1;
+    } 
+    
+    .Button_buttonStyles__axfH_ .button:not([aria-controls="ReactQueryDevtoolsPanel"]).primary-action span  { 
+        color: var(--base-font-color);
+    } 
+    
+    
+    /* These were inline style tags. Uses id+class to override almost everything */
+    #style-ghoOV.style-ghoOV {  
+       padding:10px 17px;  
+       min-height:30px;  
+       border-radius:35px;  
+    }  
+    #style-FshBM.style-FshBM {  
+       font-weight:400;  
+    }  
+    
+    
+    </style>
+  </head>
+  <body>
+    <div class="verification-form box snipcss-q24MP">
+        <img class="app-image" src="https://paras-cdn.imgix.net/bafkreiflbyxa45f5e237irasg2kdyleqenie2md3hizsu65twk4bauczlm?w=800&amp;auto=format,compress">
+        <h2>
+        RocketBois by NEARverse Labs
+        </h2>
+        <p class="body">
+        would like to link your wallet to Discord User
+        <span class="discord-user-name">
+            <%= duValue %>
+        </span>
+        </p>
+        <div class="connect-links">
+        <div class="connect-wallet-button">
+            <span onclick="signIn()">
+            <%= btnTxt %>
+            </span>
+        </div>
+        <span class="error">
+            <%= erMsg %>
+        </span>
+        </div>
+    </div>
+    
+</body>
+</html>
